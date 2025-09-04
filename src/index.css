@@ -1,0 +1,46 @@
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for in-page nav */
+html {
+scroll-behavior: smooth;
+}
+
+
+/* Aesthetic animated background (soft gradients + subtle movement) */
+body {
+/* Layered radial gradients for soft blobs of color over a dark base */
+background:
+radial-gradient(1200px circle at 10% 10%, rgba(255, 214, 165, .25), transparent 40%),
+radial-gradient(1000px circle at 90% 20%, rgba(187, 222, 251, .22), transparent 40%),
+radial-gradient(1000px circle at 20% 90%, rgba(200, 230, 201, .22), transparent 40%),
+linear-gradient(120deg, #0f172a 0%, #111827 60%, #0b1021 100%);
+background-attachment: fixed; /* parallax feel */
+animation: bgShift 18s ease-in-out infinite alternate;
+}
+
+
+@keyframes bgShift {
+0% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+100% { background-position: 5% 6%, 95% 14%, 18% 94%, 100% 100%; }
+}
+
+
+/* Reusable glass card */
+.glass {
+@apply bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-soft;
+}
+
+
+/* Section spacing helper */
+.section {
+@apply py-20 px-6 md:px-8;
+}
+
+
+/* Container width */
+.container-fluid {
+@apply max-w-7xl mx-auto;
+}
